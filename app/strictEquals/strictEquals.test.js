@@ -12,4 +12,16 @@ describe("Given a strictEqual function", () => {
       expect(hasEqualValue).toBe(result);
     });
   });
+
+  describe("When it receives NaN and Nan", () => {
+    test("Then it should return true", () => {
+      const valueA = NaN;
+      const valueB = NaN;
+      const result = false;
+
+      const hasEqualValue = strictEquals(valueA === valueB);
+
+      expect(hasEqualValue).toBe(result);
+    });
+  });
 });
